@@ -1,4 +1,15 @@
-﻿using System;
+﻿// =====================================================================
+// Author: Bert Berrevoets (bberr)
+// 
+// Created  : 12-05-2020    13:35
+// Updated  : 27-02-2022    16:23
+// 
+// Solution: CreateMp3TestFile
+// Project:  CreateMp3TestFile
+// Filename: Program.cs
+// =====================================================================
+
+using System;
 using System.IO;
 using System.Text;
 
@@ -51,8 +62,8 @@ namespace CreateMp3TestFile
             for (var i = 0; i < tagByteArray.Length; i++) tagByteArray[i] = 0; // Initialise array to nulls
 
             // Convert the Byte Array to a String
-            Encoding instEncoding = new ASCIIEncoding();   // NB: Encoding is an Abstract class // ************ To DO: Make a shared instance of ASCIIEncoding so we don't keep creating/destroying it
-                                                           // Copy "TAG" to Array
+            Encoding instEncoding = new ASCIIEncoding(); // NB: Encoding is an Abstract class // ************ To DO: Make a shared instance of ASCIIEncoding so we don't keep creating/destroying it
+            // Copy "TAG" to Array
             var workingByteArray = instEncoding.GetBytes("TAG");
             Array.Copy(workingByteArray, 0, tagByteArray, 0, workingByteArray.Length);
             // Copy Title to Array
@@ -80,7 +91,6 @@ namespace CreateMp3TestFile
             oFileStream.Write(tagByteArray, 0, 128);
             oFileStream.Close();
         }
-
     }
 
     public struct Mp3
@@ -97,16 +107,14 @@ namespace CreateMp3TestFile
         // Required struct constructor
         public Mp3(string name)
         {
-            this.FileComplete = name;
-            this.Id3Title = null;
-            this.Id3Artist = null;
-            this.Id3Album = null;
-            this.Id3Year = null;
-            this.Id3Comment = null;
-            this.Id3TrackNumber = 0;
-            this.Id3Genre = 0;
+            FileComplete = name;
+            Id3Title = null;
+            Id3Artist = null;
+            Id3Album = null;
+            Id3Year = null;
+            Id3Comment = null;
+            Id3TrackNumber = 0;
+            Id3Genre = 0;
         }
     }
-
 }
-
