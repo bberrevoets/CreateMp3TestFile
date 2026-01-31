@@ -4,11 +4,11 @@ This file provides guidance for AI assistants working with the CreateMp3TestFile
 
 ## Project Overview
 
-**CreateMp3TestFile** is a .NET 6.0 console application that demonstrates how to programmatically create MP3 files with ID3 v1.0 metadata tags. It serves as an educational example for low-level MP3 file manipulation.
+**CreateMp3TestFile** is a .NET 10 console application that demonstrates how to programmatically create MP3 files with ID3 v1.0 metadata tags. It serves as an educational example for low-level MP3 file manipulation.
 
 - **Author:** Bert Berrevoets
 - **License:** GNU GPL v3
-- **Target Framework:** .NET 6.0
+- **Target Framework:** .NET 10
 
 ## Quick Commands
 
@@ -32,7 +32,7 @@ dotnet clean
 CreateMp3TestFile/
 ├── CreateMp3TestFile.sln           # Visual Studio solution file
 ├── CreateMp3TestFile/
-│   ├── CreateMp3TestFile.csproj    # .NET 6.0 project file
+│   ├── CreateMp3TestFile.csproj    # .NET 10 project file
 │   └── Program.cs                   # Main application source (~120 lines)
 ├── README.md
 ├── LICENSE
