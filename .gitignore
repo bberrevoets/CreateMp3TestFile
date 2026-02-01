@@ -350,3 +350,4 @@ MigrationBackup/
 .ionide/
 
 CreateMp3TestFile.sln.DotSettings
+*.mp3
