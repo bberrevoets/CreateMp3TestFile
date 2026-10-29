@@ -27,10 +27,10 @@ public static class Program
         if (File.Exists(fileName))
             File.Delete(fileName);
 
-        // Create a valid silent MP3 file (~3 seconds of silence)
+        // Create a valid silent MP3 file (~2.5 minutes of silence)
         using (var fileStream = new FileStream(fileName, FileMode.CreateNew))
         {
-            var audioData = SilentMp3Generator.Generate(3.0);
+            var audioData = SilentMp3Generator.Generate(150.0);
             fileStream.Write(audioData);
         }
 
