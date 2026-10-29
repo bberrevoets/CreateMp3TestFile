@@ -1,0 +1,22 @@
+CreateMp3TestFile/Id3/Id3v2/Id3v2TagWriter.cs
+  s_041ef9c78ec16b::t_e88d988c39f987 120
+  s_041ef9c78ec16b::t_ccd504e903c6bf 132-135
+CreateMp3TestFile/Utilities/FileUtilities.cs
+  s_041ef9c78ec16b::t_2257b993675a4c 72-73,75-76
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5d84c38f1566c2c3e51cff69a1da8dc79a722858",
+  "prompts": {},
+  "sessions": {
+    "s_041ef9c78ec16b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bd11d42e-87cc-4efe-be75-1e77f71ec82c",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "B.N. Berrevoets <bert@berrevoets.net>"
+    }
+  }
+}
