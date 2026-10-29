@@ -1,0 +1,19 @@
+CreateMp3TestFile/Program.cs
+  s_041ef9c78ec16b::t_7b7f55450505cd 30,33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "91cacfb3fef4fd66f4cb0038c85ff7d47ccec804",
+  "prompts": {},
+  "sessions": {
+    "s_041ef9c78ec16b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bd11d42e-87cc-4efe-be75-1e77f71ec82c",
+        "model": "unknown"
+      },
+      "human_author": "B.N. Berrevoets <bert@berrevoets.net>"
+    }
+  }
+}
