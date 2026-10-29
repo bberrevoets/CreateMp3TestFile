@@ -117,7 +117,7 @@ public static class Id3v2TagWriter
     }
 
     /// <summary>
-    /// Gets the size of an existing ID3v2 tag (including header).
+    /// Gets the size of an existing ID3v2 tag (including header and, for ID3v2.4, the optional footer).
     /// </summary>
     public static int GetExistingTagSize(string filePath)
     {
@@ -129,7 +129,10 @@ public static class Id3v2TagWriter
         stream.ReadExactly(header, 0, Id3v2Header.HeaderSize);
 
         var dataSize = Id3v2Header.GetTagSize(header);
-        return Id3v2Header.HeaderSize + dataSize;
+
+        // The size field excludes the 10-byte footer, which mirrors the header
+        var footerSize = (header[5] & (byte)Id3v2Header.HeaderFlags.FooterPresent) != 0 ? Id3v2Header.HeaderSize : 0;
+        return Id3v2Header.HeaderSize + dataSize + footerSize;
     }
 
     /// <summary>

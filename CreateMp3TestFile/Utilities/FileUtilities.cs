@@ -69,15 +69,12 @@ public static class FileUtilities
             using (var tempStream = new FileStream(tempPath, FileMode.Create, FileAccess.Write))
             using (var sourceStream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
             {
-                // Skip the bytes to remove
-                if (sourceStream.Length <= bytesToRemove)
+                // Skip the bytes to remove; when nothing is left the empty temp file replaces the original
+                if (sourceStream.Length > bytesToRemove)
                 {
-                    // File would be empty, just create empty temp file
-                    return;
+                    sourceStream.Seek(bytesToRemove, SeekOrigin.Begin);
+                    sourceStream.CopyTo(tempStream, BufferSize);
                 }
-
-                sourceStream.Seek(bytesToRemove, SeekOrigin.Begin);
-                sourceStream.CopyTo(tempStream, BufferSize);
             }
 
             // Replace original with temp file
